@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+usage() {
+    echo "Usage: $0 FAKE_URL DEST_URL"
+    echo "Example: $0 example-website.com github.com"
+    exit 1
+}
+
+if [ "$#" -ne 2 ]; then
+    usage
+fi
+
+FAKE_URL="$1"
+DEST_URL="$2"
+
+echo -e "http://${FAKE_URL}@${DEST_URL}"
+echo -e "https://${FAKE_URL}@${DEST_URL}"
